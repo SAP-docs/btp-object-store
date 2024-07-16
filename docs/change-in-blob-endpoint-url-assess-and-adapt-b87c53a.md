@@ -1,5 +1,5 @@
 <!-- loiob87c53a89ba447b7804d1001a44e3971 -->
-
+ 
 # Change in Blob Endpoint URL: Assess and Adapt
 
 BTP Object Store Service on Azure has been internally enhanced to achieve improved IaaS resources scalability.
