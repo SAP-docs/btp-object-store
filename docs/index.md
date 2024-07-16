@@ -1,0 +1,56 @@
+# Object Store Service on SAP BTP
+
+-   [What Is Object Store?](what-is-object-store-84eb69a.md)
+-   [What's New](what-s-new-for-object-store-6882672.md)
+    -   [2023 What's New for the Object Store](what-s-new-for-the-object-store-archive-eff1f1f.md)
+-   [Concepts](concepts-8c20208.md)
+-   [Service Plans and Entitlements](service-plans-and-entitlements-26c3918.md)
+    -   [Service Plan update to 'standard'](service-plan-update-to-standard-d891fb7.md)
+-   Object Store Service on Azure
+    -   Capabilities
+        -   [Object Versioning](object-versioning-7c0f704.md)
+        -   [Preventing Accidental Deletion of Azure Containers](preventing-accidental-deletion-of-azure-containers-67e5ba7.md)
+        -   [Migrating Service Instances Created with LRS to ZRS](migrating-service-instances-created-with-lrs-to-zrs-29bd262.md)
+        -   [Auto Expiration of Blobs and Blob Versions](auto-expiration-of-blobs-and-blob-versions-4162969.md)
+        -   [Retrieve Parameters Configured on Service Instance](retrieve-parameters-configured-on-service-instance-8b617c6.md)
+        -   [Change in Blob Endpoint URL: Assess and Adapt](change-in-blob-endpoint-url-assess-and-adapt-b87c53a.md)
+        -   [Object Level Tagging](object-level-tagging-9d41a24.md)
+        -   [Role-based Bindings and Service-keys](role-based-bindings-and-service-keys-8be157a.md)
+    -   [Configure Object Store to use Azure Blob Storage](configure-object-store-to-use-azure-blob-storage-2a7fb19.md)
+    -   [Consumption in the Kyma Environment](consumption-in-the-kyma-environment-9bbfed9.md)
+    -   [Supported Operations](supported-operations-302e59d.md)
+    -   [Java Code Snippets](java-code-snippets-f95653e.md)
+-   Object Store Service on AWS
+    -   Capabilities
+        -   [Object Tagging](object-tagging-245badb.md)
+        -   [Object Versioning](object-versioning-787fbe7.md)
+        -   [Object Expiration Rules](object-expiration-rules-52e2c18.md)
+        -   [Server Access Logging](server-access-logging-b03c5b9.md)
+        -   [Prevent Accidental Deletion of AWS S3 Buckets](prevent-accidental-deletion-of-aws-s3-buckets-8c3c66d.md)
+        -   [Retrieve Parameters Configured on Service Instance](retrieve-parameters-configured-on-service-instance-def55f9.md)
+        -   [Role-based Bindings and Service-keys](role-based-bindings-and-service-keys-d33b31a.md)
+    -   [Configure Object Store to use Amazon Simple Storage Service](configure-object-store-to-use-amazon-simple-storage-service-4236b94.md)
+    -   [Consumption in the Kyma Environment](consumption-in-the-kyma-environment-11f50ef.md)
+    -   [Supported and Unsupported Operations](supported-and-unsupported-operations-8751e18.md)
+    -   [Java Code Snippets](java-code-snippets-32517ae.md)
+-   Object Store Service on GCP
+    -   Capabilities
+        -   [Object Versioning](object-versioning-f99e258.md)
+        -   [Prevent Accidental Deletion of GCS Buckets](prevent-accidental-deletion-of-gcs-buckets-9164ace.md)
+        -   [Retrieve Parameters Configured on Service Instance](retrieve-parameters-configured-on-service-instance-c3e904a.md)
+    -   [Configure Object Store to use GCP](configure-object-store-to-use-gcp-687cd27.md)
+    -   [Consumption in the Kyma Environment](consumption-in-the-kyma-environment-517baac.md)
+    -   [Supported Operations](supported-operations-ab7c240.md)
+    -   [Java Code Snippets](java-code-snippets-6248ccb.md)
+-   Development
+    -   [Guidance on building CF application that uses Object Store service](guidance-on-building-cf-application-that-uses-object-store-service-6ff2556.md)
+-   Security
+    -   [Security of the ObjectStore-aaS Access Keys](security-of-the-objectstore-aas-access-keys-578bb0b.md)
+    -   [Data Encryption Strategy](data-encryption-strategy-4a7e6d7.md)
+    -   [Data Protection and Privacy](data-protection-and-privacy-dab81b6.md)
+-   [Backup and Restore](backup-and-restore-371e080.md)
+    -   [Default Configurations](default-configurations-152735d.md)
+-   [Instance Sharing](instance-sharing-9560c86.md)
+-   Monitoring and Troubleshooting
+    -   [Frequently Asked Questions](frequently-asked-questions-e863c37.md)
+
