@@ -596,7 +596,7 @@ Number of non-current versions to retain
 
 Predicate: If the predicate parameter is used, then either the prefix or the tag can be specified, but not both. Refer to the example below.
 
-Example with Prefix:
+Example with prefix:
 
 > ### Sample Code:  
 > ```
@@ -871,9 +871,53 @@ SampleDeleteRule.json
 >     ```
 
 > ### Note:  
-> -   Transitioning objects to other storage classes is not supported\*.
-> 
+> -   Transitioning objects to other storage classes is not supported.
 > -   Object Store service does not support transitioning objects to other storage classes \(other than Standard storage class\). Even though it is technically still possible to set transition rules, we highly discourage you to set such rules.
 > -   If objects are transitioned to other storage classes, users will not be able to retrieve those back.
 > -   Also, if objects are transitioned to other storage classes by setting transition rules, the storage cost will not be reduced from what is charged for standard storage class currently.
+
+
+
+### How to handle an error while updating a lifecycle expiration rule
+
+You may see the following error while updating lifecycle on your AWS instance:
+
+```
+Filter element can only be used in Lifecycle V2. (Service: Amazon S3; Status Code: 400; Error Code: InvalidRequest
+```
+
+*Why does this error occur?*
+
+If you previously set an expiration rule using Lifecycle V1 \(when you had permission to directly set the rule through AWS S3 CLI/SDK/API\) and now you are trying to update the rule through the update-instance operation, then you would see this error.
+
+The reason is that, when you request the rule modification through update-service, the Object Store service uses Lifecycle V2 \(the newer version\). Therefore, the conflict between V1 and V2 happens.
+
+This is a valid error message from AWS. You must adapt your lifecycle configuration to the new format, using one of the following options:
+
+1.  **Suggested option:** Fetch and delete all existing rules using the service instance update operation. Then apply the desired rules with the V2 format of lifecycle rules again through service instance operation.
+2.  **Workaround:** Setting a rule through update-service call using V1 lifecycle will also work, as long as some of the properties that were introduced with V2 lifecycle are not used in the update-service call.
+
+An example of a V1 lifecycle expiration rule that will work through update-service appears below:
+
+> ### Sample Code:  
+> ```
+>  ```
+>  "autoExpiration": [
+>   {
+>    "abortIncompleteMultipartUpload": null,
+>    "expirationDate": null,
+>    "expirationInDays": -1,
+>    "expiredObjectDeleteMarker": false,
+>    "filter": null,
+>    "id": "Example-id",
+>    "noncurrentVersionExpiration": {
+>     "days": 15,
+>     "newerNoncurrentVersions": -1
+>    },
+>    "prefix": "",
+>    "status": "Enabled"
+>   }
+>  ]
+>  ```
+> ```
 

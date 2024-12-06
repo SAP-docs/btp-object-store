@@ -89,12 +89,210 @@ Object Store
 </td>
 <td valign="top">
 
+Continuous backup on AWS
+
+</td>
+<td valign="top">
+
+Object Store now supports continuous backup and point-in time restoration on AWS. See [Enable Continuous Backup](enable-continuous-backup-a37de84.md) and [Request Point-in-Time Restoration](request-point-in-time-restoration-5f5c94a.md).
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+New
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+ 
+
+</td>
+<td valign="top">
+
+2024-09-19
+
+</td>
+<td valign="top">
+
+2024-09-19
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Object Store
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
+Role-based service bindings on Google Cloud Platform
+
+</td>
+<td valign="top">
+
+Object Store now supports read and write role-based service binding credentials. See [Role-Based Bindings and Service Keys \(GCP\)](role-based-bindings-and-service-keys-gcp-3661acd.md).
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+New
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+ 
+
+</td>
+<td valign="top">
+
+2024-09-19
+
+</td>
+<td valign="top">
+
+2024-09-19
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Object Store
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
+Support for blob index match in expiration rules on Azure
+
+</td>
+<td valign="top">
+
+Object Store now supports blob index match on Azure. For details, see [Auto Expiration of Blobs and Blob Versions](auto-expiration-of-blobs-and-blob-versions-4162969.md).
+
+</td>
+<td valign="top">
+
+Info only
+
+</td>
+<td valign="top">
+
+General Availability
+
+</td>
+<td valign="top">
+
+New
+
+</td>
+<td valign="top">
+
+Technology
+
+</td>
+<td valign="top">
+
+Not applicable
+
+</td>
+<td valign="top">
+
+ 
+
+</td>
+<td valign="top">
+
+2024-08-22
+
+</td>
+<td valign="top">
+
+2024-08-22
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+Object Store
+
+</td>
+<td valign="top">
+
+-   Cloud Foundry
+
+-   Kyma
+
+
+
+</td>
+<td valign="top">
+
 Role-based service bindings on AWS
 
 </td>
 <td valign="top">
 
-Object Store Service now supports read and write role based service binding credentials. Please refer the section [Role-based Bindings and Service-keys](role-based-bindings-and-service-keys-d33b31a.md) for more details.
+Object Store Service now supports read and write role based service binding credentials. Please refer the section [Role-based Bindings and Service-keys](role-based-bindings-and-service-keys-aws-d33b31a.md) for more details.
 
 </td>
 <td valign="top">
@@ -160,7 +358,7 @@ Role-based service bindings on Azure
 </td>
 <td valign="top">
 
-Object Store Service now supports read and write role based service binding credentials. Please refer the section [Role-based Bindings and Service-keys](role-based-bindings-and-service-keys-8be157a.md) for more details.
+Object Store Service now supports read and write role based service binding credentials. Please refer the section [Role-based Bindings and Service-keys](role-based-bindings-and-service-keys-azure-8be157a.md) for more details.
 
 </td>
 <td valign="top">

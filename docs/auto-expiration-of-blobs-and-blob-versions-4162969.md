@@ -345,7 +345,7 @@ yes
 </td>
 <td valign="top">
 
-The name of the filter. Current supported filter is prefixMatch
+The name of the filter. Current supported filter is `prefixMatch` and `blobIndexMatch`.
 
 </td>
 </tr>
@@ -357,7 +357,7 @@ values
 </td>
 <td valign="top">
 
-array of strings
+array of strings \(`prefixMatch`\)
 
 </td>
 <td valign="top">
@@ -367,7 +367,29 @@ yes
 </td>
 <td valign="top">
 
-A list of strings for prefixes to be matched. Each rule can define up to 10 case-sensitive prefixes. A prefix string must start with a container name. For example, if you want to match all blobs under`https://myaccount.blob.core.windows.net/sample-container/blob1/... for a rule`, the values are \["sample-container/blob1"\]
+A list of strings for prefixes to be matched. Each rule can define up to 10 case-sensitive prefixes. A prefix string must start with a container name. For example, if you want to match all blobs under `https://myaccount.blob.core.windows.net/sample-container/blob1/...` for a rule, the values are \["sample-container/blob1"\]
+
+</td>
+</tr>
+<tr>
+<td valign="top">
+
+ 
+
+</td>
+<td valign="top">
+
+array of tag elements \(`blobIndexMatch`\)
+
+</td>
+<td valign="top">
+
+no
+
+</td>
+<td valign="top">
+
+An array of dictionary values consisting of the blob index tag key and value conditions to be matched. Each rule can define up to 10 blob index tag conditions. For example, if you want to match all blobs with Project = Contoso under`https://myaccount.blob.core.windows.net/` for a rule, the `blobIndexMatch` is `{"name": "Project","op": "==","value": "Contoso"}`.
 
 </td>
 </tr>
@@ -433,23 +455,52 @@ sampleExpirationRules1.json
             ]
           }
         ]
-      }
-    ]
+      },
+      {
+  	"name": "sample-rule3",
+  	"disabled": false,
+  	"toBeDeleted": false,
+  	"definitions": [
+    	   {
+      	      "type": "baseBlob",
+              "operator": "daysAfterModificationGreaterThan",
+              "value": "50.0"
+    	   }
+  	],
+  	"filters": [
+    	{
+               "name": "prefixMatch",
+      		"values": [
+        	"sample-container1/blob4"
+      		]
+      	},
+    	{
+           "name": "blobIndexMatch",
+      	   "values": [
+              {
+                  "name": "Project",
+                  "op": "==",
+                  "value": "Contoso"
+              }
+      	 ]
+    	 }
+       ]
+     }
+   ]
   }
 ```
 
-The command enables two rules for your service instance:
+The command enables three rules for your service instance:
 
 -   sample-rule1 deletes base blobs after 100 days of no modification and versions after 90 days of creation on the objects with the prefix "sample-container/blob1" or "sample-container/blob2".
-
--   sample-rule2 deletes only versions\(non-current\) after 90 days of their creation on the objects with the prefix "sample-container/blob3".
-
+-   sample-rule2 deletes only noncurrent versions after 90 days of their creation on the objects with the prefix "sample-container/blob3".
+-   sample-rule3 deletes baseBlobs after 50 days of no modification having the prefix "sample-container/blob3", blobIndex with "Project" as "Contoso".
 
 
 
 ### How to update an existing configured rule?
 
-The following command changes the definitions in sample-rule2 which was configured earlier:
+The following command changes the definitions in sample-rule2, which was configured earlier:
 
 ```
 cf update-service <service_instance_name> -c sampleExpirationRules2.json
@@ -487,8 +538,6 @@ sampleExpirationRules2.json
 
 
 ### How to delete existing configured rule? \(Method 1\) \(Recommended\)
-
-****
 
 
 <table>
@@ -616,16 +665,11 @@ The --params flag is only available cf8 onwards. If you're using an older versio
 
 > ### Note:  
 > -   Auto expiration rules can be configured on noncurrent versions of the object even though versioning is disabled. The rule can't be applied if there are no versions of the objects to be deleted.
-> 
-> -   If you don't define prefixMatch under filters, the rule applies to all blobs within the storage account.
-> 
+> -   If you don't define prefixMatch or blobIndexMatch under filters, the rule applies to all blobs within the storage account.
+> -   BlobIndexMatch can be used only with baseBlobs and not with version.
 > -   If you set two rules, one deleting the base blob after 10 days as no modification and the other deleting base blob after 100 days of no modification. The base blob is deleted after 10 days of no modification.
-> 
 > -   While updating a particular rule, the user needs to provide a complete updated rule and not just the part where modification is required. The rule is overridden with the latest configuration. Alternately, you can delete and create a fresh expiration rule.
-> 
 > -   All the previously configured parameters stay as it is unless modified explicitly.
-> 
 > -   Though auto expiration is an extension of [Lifecycle Management](https://docs.microsoft.com/en-us/azure/storage/blobs/lifecycle-management-overview), we don’t support tiering \(hot, cool, archive, and so on\) of blobs, selecting blob types & filtering based on blobIndexMatch.
-> 
 > -   Transitioning objects to other storage classes isn't supported.
 

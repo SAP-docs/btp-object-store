@@ -2,7 +2,7 @@
 
 # Service Plans and Entitlements
 
-The following tables outline the service plan\(s\) and parameters use in the configuration of the service instance\(s\) exposed by the Object Store service on Infrastructure Providers:
+To use the Object Store service, use the standard service plan.
 
 
 <table>
@@ -99,7 +99,7 @@ Zone Redundant Storage
 </tr>
 </table>
 
-Previous service plan\(s\) specific parameters:
+Previous service plans:
 
 
 <table>
@@ -195,15 +195,13 @@ Zone Redundant Storage \(container name has ‘zrs’ suffix\)
 </tr>
 </table>
 
-
+> ### Note:  
+> The standard service plan unifies the delivery of the service for all hyperscalers, simplifying all existing commercial plans. All existing plans capabilities are now under Object Store's standard plan, providing the same service functionalities. Customers should use the standard service plan for all new Object Store instances.
+> 
+> \*The azure-standard, s3-standard, and gcs-standard service plans were removed from the list of Eligible Cloud Services as of January 15, 2024. Existing instances will not be impacted and will be available until the end of the current subscription term. They will not be available for renewal terms that begin after the removal date.
+> 
+> For information about updating your instances to the standard plan, see [Service Plan update to 'standard'](service-plan-update-to-standard-d891fb7.md).
 
 > ### Note:  
-> The “Standard” service plan unifies the delivery of the service in all hyperscalers, simplifying all the existing commercial plans. All existing plans capabilities are now under Object Store's "standard" plan, providing the same service functionalities, customers should use the ''standard'' service plan for all new Object Store instances.
-> 
-> \*The "azure-standard", "s3-standard" and "gcs-standard" service plans were removed from the list of Eligible Cloud Services as of 15.01.2024. Existing instances will not be impacted and will be available until the end of the current subscription term. They will not be available for renewal terms that begin after the removal date.
-> 
-> For information on updating your instances to the ‘Standard’ plan please refer to [Service Plan update to 'standard'](service-plan-update-to-standard-d891fb7.md)
-
-> ### Note:  
-> Please be note that the cloud service comes with a restriction on the monthly requests \(api\_calls\) number, for more information please check SAP Business Technology Platform Service Description Guide, [part of the contractual terms and is available via SAP Trust Center Agreements](https://www.sap.com/portugal/about/trust-center/agreements/cloud/cloud-services.html?sort=latest_desc&search=Platform%20Service%20Description%20Guide).
+> The cloud service restricts the number of monthly requests \(api\_calls\) per each 100GB storage block. For more information, see the [SAP Business Technology Platform Service Description Guide](https://www.sap.com/portugal/about/trust-center/agreements/cloud/cloud-services.html?sort=latest_desc&search=Platform%20Service%20Description%20Guide), which is part of the contractual terms and is available via SAP Trust Center Agreements.
 
